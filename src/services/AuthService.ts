@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { FacebookLoginService } from './FacebookLoginService';
 import { Cookie } from '../utils/CookieParser';
 
 interface LoginResponse {
@@ -11,18 +11,8 @@ interface LoginResponse {
 export class AuthService {
   static async login(email: string, password: string): Promise<LoginResponse> {
     try {
-      // Make the login request
-      const loginResponse = await axios.post('/api/facebook/login', 
-        { email, password },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          withCredentials: true
-        }
-      );
-
-      return loginResponse.data;
+      // Use the new FacebookLoginService
+      return await FacebookLoginService.login(email, password);
     } catch (error) {
       console.error('Login error:', error);
       return {
@@ -37,17 +27,12 @@ export class AuthService {
   // Use the mock login for testing
   static async mockLogin(): Promise<LoginResponse> {
     try {
-      const mockResponse = await axios.post('/api/facebook/mock-login', {}, {
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      });
-      
-      return mockResponse.data;
+      // Use the mock login method from FacebookLoginService
+      return await FacebookLoginService.mockLogin();
     } catch (error) {
       console.error('Mock login error:', error);
       
-      // Fallback to hardcoded mock data if server request fails
+      // Fallback to hardcoded mock data if service call fails
       const mockCookies: Cookie[] = [
         {
           key: "datr",
@@ -102,28 +87,10 @@ export class AuthService {
           hostOnly: false,
           creation: "2025-04-17T00:29:42.796Z",
           lastAccessed: "2025-04-17T00:29:42.799Z"
-        },
-        {
-          key: "locale",
-          value: "en_US",
-          domain: "facebook.com",
-          path: "/",
-          hostOnly: false,
-          creation: "2025-04-17T00:29:42.797Z",
-          lastAccessed: "2025-04-17T00:29:42.800Z"
-        },
-        {
-          key: "vpd",
-          value: "v1%3B880x492x2.4000000953674316",
-          domain: "facebook.com",
-          path: "/",
-          hostOnly: false,
-          creation: "2025-04-17T00:29:42.798Z",
-          lastAccessed: "2025-04-17T00:29:42.801Z"
         }
       ];
       
-      const mockCookieString = "datr=X9v4ZwfBCIUBJOPOwhI4OQiV; sb=X9v4Z2fbJPuZZe78l_8lotzn; m_pixel_ratio=2.4000000953674316; ps_l=1; ps_n=1; wd=492x880; c_user=100029544710738; fr=0PNG1hXyrlGaOWRs9.AWc3G8S2EvXHPsd03dK1Sb3MxofJpCZ76a4gMtpFNqVp2LyDC9E.Bn-Ntf..AAA.0.0.Bn-Nug.AWfT_tlBXgdryFUJjrilo4H-A5M; xs=17%3AFmU6DcxD5R_Tbg%3A2%3A1744362402%3A-1%3A8065; locale=en_US; vpd=v1%3B880x492x2.4000000953674316; wl_cbv=v2%3Bclient_version%3A2785%3Btimestamp%3A1744362424; fbl_st=100435030%3BT%3A29072707";
+      const mockCookieString = "datr=X9v4ZwfBCIUBJOPOwhI4OQiV; sb=X9v4Z2fbJPuZZe78l_8lotzn; m_pixel_ratio=2.4000000953674316; wd=492x880; c_user=100029544710738; fr=0PNG1hXyrlGaOWRs9.AWc3G8S2EvXHPsd03dK1Sb3MxofJpCZ76a4gMtpFNqVp2LyDC9E; xs=17%3AFmU6DcxD5R_Tbg%3A2%3A1744362402%3A-1%3A8065";
       
       return {
         success: true,

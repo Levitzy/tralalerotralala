@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../index.css';
+import '../facebook.css';
 
 interface LoginFormProps {
   onSubmit: (email: string, password: string) => void;
@@ -16,45 +16,48 @@ export function LoginForm({ onSubmit, isLoading }: LoginFormProps) {
   };
 
   return (
-    <div className="fb-login">
-      <div className="fb-header">
-        <h1 className="fb-logo">facebook</h1>
+    <div>
+      <div className="facebook-header">
+        <h1 className="facebook-logo">facebook</h1>
+        <p className="facebook-tagline">Connect with friends and the world around you on Facebook.</p>
       </div>
-      <div className="login-form-container">
-        <form onSubmit={handleSubmit} className="fb-form">
-          <div className="form-group">
+      <div className="login-card">
+        <form onSubmit={handleSubmit}>
+          <div className="form-field">
             <input
               type="text"
-              placeholder="Mobile number or email address"
+              placeholder="Email or phone number"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="fb-input"
+              className="input"
             />
           </div>
-          <div className="form-group">
+          <div className="form-field">
             <input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="fb-input"
+              className="input"
             />
           </div>
-          <div className="form-group">
-            <button type="submit" className="fb-button" disabled={isLoading}>
+          <div className="form-field">
+            <button 
+              type="submit" 
+              className="login-button"
+              disabled={isLoading}
+            >
               {isLoading ? 'Logging in...' : 'Log In'}
             </button>
           </div>
           <div className="forgot-password">
             <a href="#forgot">Forgotten password?</a>
           </div>
-          <div className="divider">
-            <span>or</span>
-          </div>
-          <div className="form-group">
-            <button type="button" className="create-account-button">
+          <div className="divider"></div>
+          <div className="create-account">
+            <button type="button" className="create-button">
               Create New Account
             </button>
           </div>

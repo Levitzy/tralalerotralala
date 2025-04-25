@@ -1,0 +1,246 @@
+/* Facebook Login Styles */
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background-color: #f0f2f5;
+  }
+  
+  .content {
+    width: 100%;
+    max-width: 28rem;
+  }
+  
+  .facebook-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .facebook-logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1877F2;
+    margin-bottom: 0.5rem;
+  }
+  
+  .facebook-tagline {
+    color: #1c1e21;
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .login-card {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-field {
+    margin-bottom: 1rem;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 17px;
+    border-radius: 6px;
+    border: 1px solid #dddfe2;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #1877F2;
+    box-shadow: 0 0 0 2px #e7f3ff;
+  }
+  
+  .login-button {
+    width: 100%;
+    background-color: #1877F2;
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  .login-button:hover {
+    background-color: #166fe5;
+  }
+  
+  .forgot-password {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .forgot-password a {
+    color: #1877F2;
+    text-decoration: none;
+  }
+  
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+  
+  .divider {
+    border-bottom: 1px solid #dadde1;
+    margin: 1.25rem 0;
+  }
+  
+  .create-account {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .create-button {
+    background-color: #42b72a;
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  .create-button:hover {
+    background-color: #36a420;
+  }
+  
+  .test-mode {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox {
+    margin-right: 0.5rem;
+  }
+  
+  .error-message {
+    background-color: #ffebe8;
+    border: 1px solid #dd3c10;
+    color: #333333;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Success Page Styles */
+  .success-banner {
+    background-color: #e6f7e9;
+    border-bottom: 1px solid #d4e8d7;
+    padding: 1.5rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .success-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+  }
+  
+  .success-message {
+    color: #2e7d32;
+  }
+  
+  .cookies-container {
+    padding: 1.5rem;
+  }
+  
+  .tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #dadde1;
+    margin-bottom: 1rem;
+  }
+  
+  .tab-button {
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .tab-button.active {
+    color: #1877F2;
+    border-bottom: 2px solid #1877F2;
+  }
+  
+  .cookie-content {
+    background-color: #f9fafb;
+    border: 1px solid #dadde1;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  
+  .cookie-content h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cookie-data {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #dadde1;
+    font-family: monospace;
+    overflow-x: auto;
+    max-height: 250px;
+    margin-bottom: 1rem;
+  }
+  
+  .copy-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1877F2;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .copy-button:hover {
+    background-color: #166fe5;
+  }
+  
+  .logout-section {
+    background-color: #f0f2f5;
+    border-top: 1px solid #dadde1;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  .logout-button {
+    background-color: #e4e6eb;
+    color: #050505;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .logout-button:hover {
+    background-color: #d8dadf;
+  }

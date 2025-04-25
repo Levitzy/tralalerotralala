@@ -3,6 +3,7 @@ import { LoginForm } from './components/LoginForm';
 import { CookieDisplay } from './components/CookieDisplay';
 import { AuthService } from './services/AuthService';
 import { Cookie } from './utils/CookieParser';
+import './facebook.css';
 import './index.css';
 
 function App() {
@@ -44,37 +45,52 @@ function App() {
   };
 
   return (
-    <div className="app">
-      {!isLoggedIn ? (
-        <>
-          <LoginForm onSubmit={handleLogin} isLoading={isLoading} />
-          <div className="mock-toggle">
-            <label>
-              <input 
-                type="checkbox" 
-                checked={useMock} 
-                onChange={() => setUseMock(!useMock)}
-              />
-              Use mock data (for testing)
-            </label>
+    <div className="container">
+      <div className="content">
+        {!isLoggedIn ? (
+          <>
+            <LoginForm onSubmit={handleLogin} isLoading={isLoading} />
+            
+            <div className="test-mode">
+              <label className="checkbox-container">
+                <input 
+                  type="checkbox" 
+                  checked={useMock} 
+                  onChange={() => setUseMock(!useMock)}
+                  className="checkbox"
+                />
+                <span>Use mock data (for testing)</span>
+              </label>
+            </div>
+            
+            {error && (
+              <div className="error-message">
+                <strong>Error:</strong> {error}
+              </div>
+            )}
+          </>
+        ) : (
+          <div className="login-card">
+            <div className="success-banner">
+              <h2 className="success-title">Login Successful!</h2>
+              <p className="success-message">
+                You have successfully logged in to your Facebook account.
+              </p>
+            </div>
+            
+            <CookieDisplay cookies={cookies} cookieString={cookieString} />
+            
+            <div className="logout-section">
+              <button 
+                className="logout-button"
+                onClick={() => setIsLoggedIn(false)}
+              >
+                Logout
+              </button>
+            </div>
           </div>
-          {error && <div className="error-message">{error}</div>}
-        </>
-      ) : (
-        <div className="logged-in-container">
-          <div className="success-message">
-            <h2>Login Successful!</h2>
-            <p>You have successfully logged in to your Facebook account.</p>
-          </div>
-          <CookieDisplay cookies={cookies} cookieString={cookieString} />
-          <button 
-            className="logout-button"
-            onClick={() => setIsLoggedIn(false)}
-          >
-            Logout
-          </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

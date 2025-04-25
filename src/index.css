@@ -2,52 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .btn {
-    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
-  }
-  
-  .btn-primary {
-    @apply bg-primary text-white hover:bg-indigo-700;
-  }
-  
-  .btn-secondary {
-    @apply bg-secondary text-white hover:bg-indigo-500;
-  }
+/* Custom styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
 
-  .btn-danger {
-    @apply bg-danger text-white hover:bg-red-600;
-  }
-  
-  .input-field {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
-  }
-  
-  .card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden;
-  }
-  
-  .card-header {
-    @apply px-6 py-4 bg-gray-50 border-b border-gray-200;
-  }
-  
-  .card-body {
-    @apply p-6;
-  }
+/* Facebook custom styles */
+.fb-blue {
+  background-color: #1877F2;
+}
 
-  .badge {
-    @apply px-2 py-1 text-xs font-semibold rounded;
-  }
+.fb-green {
+  background-color: #42B72A;
+}
 
-  .badge-success {
-    @apply bg-green-100 text-green-800;
-  }
+.fb-text-blue {
+  color: #1877F2;
+}
 
-  .badge-info {
-    @apply bg-blue-100 text-blue-800;
-  }
+.font-medium {
+  font-weight: 500;
+}
 
-  .badge-warning {
-    @apply bg-yellow-100 text-yellow-800;
-  }
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
